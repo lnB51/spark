@@ -1,0 +1,54 @@
+[package]
+name = "spark"
+version = "0.1.0"
+authors = ["Dmytro Zhaivoronok"]
+edition = "2021"
+resolver = "2"
+rust-version = "1.77"
+
+[[bin]]
+name = "spark"
+harness = false # do not use the built in cargo test harness -> resolve rust-analyzer errors
+
+[profile.release]
+opt-level = "s" # Optimize for size in release builds
+
+[profile.dev]
+debug = true    # Symbols are nice and they don't increase the size on Flash
+opt-level = "z" # Optimize for binary size in development builds
+
+[features]
+default = ["std", "embassy", "esp-idf-svc/native"]
+
+pio = ["esp-idf-svc/pio"] 
+std = ["alloc", "esp-idf-svc/binstart", "esp-idf-svc/std"]
+alloc = ["esp-idf-svc/alloc"]
+nightly = ["esp-idf-svc/nightly"]
+experimental = ["esp-idf-svc/experimental"]
+embassy = ["esp-idf-svc/embassy-sync", "esp-idf-svc/critical-section", "esp-idf-svc/embassy-time-driver"]
+
+[dependencies]
+# Logging
+log = { version = "0.4", default-features = false }
+
+# ESP32 and Embedded Support
+esp-idf-svc = { version = "0.49.1" , default-features = false }
+embedded-svc = "0.28"
+
+# Telegram API Client
+frankenstein = { version = "0.32", default-features = false, features = ["telegram-trait"]}
+
+# Serialization
+serde = { version = "1", features = ["derive"]}
+serde_json = { version = "1"}
+
+# Configuration Management
+toml-cfg = "0.2"
+
+# Error Handling
+anyhow = "1.0.75"
+thiserror = "1.0.63"
+
+[build-dependencies]
+# Build-time Utilities
+embuild = "0.32"

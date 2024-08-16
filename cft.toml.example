@@ -1,0 +1,5 @@
+[spark]
+wifi_ssid = "Spark"
+wifi_pass = "Remote"
+bot_token = "Hello I'm bot token"
+bot_owner_id = 12345678
