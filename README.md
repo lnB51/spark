@@ -8,7 +8,7 @@
 #### Remote starter for PC
 ![Version 0.1](https://img.shields.io/badge/Version%200.1-FFC832?style=for-the-badge&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000?style=for-the-badge&logo=rust&logoColor=white)
-[![MIT License](https://img.shields.io/badge/MIT%20License-004772?style=for-the-badge&logo=license&logoColor=white)](https://github.com/lnB51/spark/blob/main/LICENSE.md)
+[![MIT License](https://img.shields.io/badge/MIT%20License-004772?style=for-the-badge&logo=license&logoColor=white)](https://github.com/lnB51/spark/blob/master/LICENSE)
 <p>
   This project was designed to solve the problem of arranging a remote workplace. If there were no problems with remote control tools, how to run a computer remotely with minimal costs is a difficult question.
 </p>
